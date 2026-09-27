@@ -4,9 +4,12 @@ def main():
 
 
 def get_number():
-    number = int(input("Enter the number: "))
+    
     while True:
+        number = int(input("Enter the number: "))
         if number >= 0:
             return number
+        else:
+            continue
 
 main()

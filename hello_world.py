@@ -1,14 +1,8 @@
+import math
 
-def main():
-    fullName = input("Enter your full name: ")
-    fullName = fullName.strip().title()
-    hello(fullName)
 
-def hello(n):
-    print(f"Hello, {n}.")
-
-main()
-
+number = math.sqrt(16)
+print(f"{number:.2f}")
 
 
 
