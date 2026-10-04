@@ -1,15 +1,12 @@
 def main():
-    number = get_number()
-    print(f"You entered: {number}")
+    square("x")
 
 
-def get_number():
-    
-    while True:
-        number = int(input("Enter the number: "))
-        if number >= 0:
-            return number
-        else:
-            continue
+def square(symbole):
+    for i in range(len(4)):
+        for j in range(len(4)):
+            print(symbole)
 
-main()
+
+if __name__ == "__main__":
+    main()
