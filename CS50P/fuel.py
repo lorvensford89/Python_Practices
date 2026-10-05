@@ -34,10 +34,19 @@ def problem_set3():
             parts = user_input.split("/")
             x = int(parts[0])
             y = int(parts[1])
+            if x < 0 or y <= 0:     # No need for multiple exceptions
+                continue            # if y = 0, the loop will start again
         except ValueError:
             pass
-        else:
-            print(f"{round((x/y) * 100)}%")
+        else:                   
+            result = (x/y) * 100
+            if result <= 1:         # Condions for correct display
+                print("E")
+            elif result >= 99:
+                print("F")
+            else:
+                print(f"{round(result)}%")
+            break
 
     # TODO: Implement the conditions for the correct display (E/F)
 
