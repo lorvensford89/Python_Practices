@@ -16,7 +16,13 @@ def main():
 
 
 """
-In a file called fuel.py, implement a program that prompts the user for a fraction, formatted as X/Y, wherein X is a non-negative integer and Y is a positive integer, and then outputs, as a percentage rounded to the nearest integer, how much fuel is in the tank. If, though, 1% or less remains, output E instead to indicate that the tank is essentially empty. And if 99% or more remains, output F instead to indicate that the tank is essentially full.
+In a file called fuel.py, implement a program that prompts the user for a
+fraction, formatted as X/Y, wherein X is a non-negative integer and Y 
+is a positive integer, and then outputs, as a percentage rounded to the
+nearest integer, how much fuel is in the tank. If, though, 1% or less 
+remains, output E instead to indicate that the tank is essentially empty. 
+And if 99% or more remains, output F instead to indicate that the tank 
+is essentially full.
 """
 
 def problem_set3():
