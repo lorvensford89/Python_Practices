@@ -48,7 +48,8 @@ def problem_set3():
                 print(f"{round(result)}%")
             break
 
-    # TODO: Implement the conditions for the correct display (E/F)
+    # TODO: Implement the conditions for the correct display (E/F) -> DONE
+
 
 
 
@@ -56,7 +57,7 @@ def lines(a):
     for i in range(a):
         print("")
 
-
+# TODO: Check the program with AI, and clean the codes.
 
 if __name__ == "__main__":
     main()
