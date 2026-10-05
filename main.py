@@ -1,7 +1,11 @@
 def main():
     lines(1)
 
-    square("x")
+    number = get_integer()
+    print(f"{number}")
+
+    lines(2)
+    square("x", 4, 4)
     lines(2)
 
     try:
@@ -18,9 +22,9 @@ def main():
 
     
 
-def square(symbol):
-    for i in range(4):
-        for j in range(4):
+def square(symbol, length, width):
+    for i in range(length):
+        for j in range(width):
             print(symbol, end="")
         lines(1)
 
@@ -32,6 +36,15 @@ def division(a, b):
         result = a / b
         return result
 
+
+def get_integer():
+    while True:
+        try:
+            number = int(input("Enter a number: "))
+        except ValueError:
+            pass
+        else:
+            return number
 
 def lines(a):
     for i in range(a):
