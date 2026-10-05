@@ -1,15 +1,5 @@
 def main():
-    text = "4/3"
-    parts = text.split("/")
-
-
-    print(parts)    # Variable 'parts' becomes a list
-
-    a = int(parts[0])
-    b = int(parts[1])
-
-    print(a, b)
-
+    
     lines(2)
     problem_set3()
     lines(2)
@@ -36,7 +26,7 @@ def problem_set3():
             y = int(parts[1])
             if x < 0 or y <= 0:     # No need for multiple exceptions
                 continue            # if y = 0, the loop will start again
-        except ValueError:
+        except (ValueError, ZeroDivisionError):
             pass
         else:                   
             result = (x/y) * 100

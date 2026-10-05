@@ -19,6 +19,10 @@ def main():
 
     lines(2)
 
+    dictionary_check()
+
+    lines(2)
+
 
     
 
@@ -45,6 +49,19 @@ def get_integer():
             pass
         else:
             return number
+
+
+def dictionary_check():
+    El_info = {
+        "Name": "EL",
+        "Age": 22,
+        "Profession": "Software Engineer"
+    }
+
+    for key, value in El_info.items():
+        print(f"{key}: {value}")
+
+
 
 def lines(a):
     for i in range(a):
