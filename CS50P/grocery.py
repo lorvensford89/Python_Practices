@@ -21,24 +21,16 @@ def problem_set3():
         try:
             user_input = input("").upper()
             items.append(user_input)
-            count_items = items.count(user_input) # To fix
-            items = list(set(items))
-            items.sort()
         except EOFError:
             pass
             print("")
-            for i in range(len(items)):
-                print(count_items, items[i])
+            items.sort()
+            for i in sorted(set(items)): # iterate through a sorted unique-item list
+                count_items = items.count(i)
+                print(count_items, i)
             break
     
            
-            
-
-
-            
-
-
-
 if __name__ == "__main__":
     main()
 
