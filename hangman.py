@@ -86,6 +86,8 @@ def hangman_logic():
     """
     ]
 
+
+
     while True:
       
         user_input = input("Enter a letter of the guessed word: ")
@@ -100,6 +102,7 @@ def hangman_logic():
 def lines(a):
     for i in range(a):
         print("")
+    
 
 
 if __name__ == "__main__":
