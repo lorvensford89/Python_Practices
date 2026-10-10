@@ -2,6 +2,8 @@
 This is a hangman game.
 """
 
+# There are modifications to be made.
+
 import random
 
 def main():
@@ -15,7 +17,7 @@ def main():
                                     #       3) If it's not in the word, increase attempts
                                     #       4) Rebuild the display from scratch, using all guessed letters
     #       5) Render it
-    #       6) If no "_" remains, the player won. If attemps hit the max, the player lost. Otherwise, repeat
+    #       6) If no "_" remains, the player won. If attemps hit the max, the player lost. Otherwise, repeat. 
 
 
 def hangman_logic():
