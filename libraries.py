@@ -32,6 +32,7 @@ def main():
     lines(1)
 
     # sys.argv[a]   a: number of arguments
+    """
     try:
         print(f"Your name is, {sys.argv[1]}.")
     except IndexError:          # Preventing the program to crash by handling exceptions
@@ -45,6 +46,19 @@ def main():
     finally:
         lines(1)
         print("You have used the 'sys' module.")
+    """
+
+    # handling using conditions
+    if len(sys.argv) < 2:
+        print("Too few arguments!")
+    elif len(sys.argv) < 2:
+        print("Too many arguments!")
+    else:
+        print(f"Your name is {sys.argv[1]}")
+
+
+
+
 
 def lines(a):
     for i in range(a):
