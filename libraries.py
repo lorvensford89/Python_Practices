@@ -1,5 +1,7 @@
 import random
 import statistics
+
+import cowsay
 import sys
 
 def main():
@@ -57,7 +59,7 @@ def main():
         # print("Too many arguments!")
     
     print(f"Your name is {sys.argv[1]}")
-    """
+    
 
     
 
@@ -67,8 +69,11 @@ def main():
 
     for arg in sys.argv[1:]:
         print(f"Hello, my name is {arg}.")
+    """
 
-
+    # Using cowsay package
+    if len(sys.argv) == 2:
+        cowsay.cow("Hello" + sys.argv[1])
 
 
 
