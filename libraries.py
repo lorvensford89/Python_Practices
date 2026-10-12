@@ -32,8 +32,19 @@ def main():
     lines(1)
 
     # sys.argv[a]   a: number of arguments
-    print(f"Your name is, {sys.argv[1]}.")
-
+    try:
+        print(f"Your name is, {sys.argv[1]}.")
+    except IndexError:          # Preventing the program to crash by handling exceptions
+        print("The use of command-line arguments: ")       
+        print("- Too few arguments!")
+        lines(2)
+        name = input("You were supposed to enter your name; but do it here: ")
+        print(f"Your name is {name}.")
+    else:
+        print("You actually wrote something in the command-line after executing the program")
+    finally:
+        lines(1)
+        print("You have used the 'sys' module.")
 
 def lines(a):
     for i in range(a):
