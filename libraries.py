@@ -46,7 +46,7 @@ def main():
     finally:
         lines(1)
         print("You have used the 'sys' module.")
-    """
+    
 
     # handling using conditions
     if len(sys.argv) < 2:
@@ -57,6 +57,16 @@ def main():
         # print("Too many arguments!")
     
     print(f"Your name is {sys.argv[1]}")
+    """
+
+    
+
+    # Use of Slice
+    if len(sys.argv) < 2:
+        sys.exit("Too few arguments!")
+
+    for arg in sys.argv[1:]:
+        print(f"Hello, my name is {arg}.")
 
 
 
