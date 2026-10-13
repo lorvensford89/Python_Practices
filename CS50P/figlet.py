@@ -4,6 +4,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import el_library
+from pyfiglet import Figlet
 
 def main():
     el_library.lines(2)
@@ -25,6 +26,16 @@ def problem_set4():
         - Prompts the user for a str of text.
         - Outputs that text in the desired font.
     """
+
+    # Examples from the Figlet module
+    figlet = Figlet()
+    figlet.getFonts()
+    figlet.setFont(font='slant')
+
+    name = "EL"
+    print(figlet.renderText(name))
+
+    # TODO: Command-line Arguments
 
 
 if __name__ == "__main__":
