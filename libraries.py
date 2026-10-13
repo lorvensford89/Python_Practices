@@ -5,6 +5,8 @@ import cowsay
 import requests # APIs
 import json
 import sys
+from say import goodbye
+import emoji
 
 def main():
     lines(2)
@@ -76,16 +78,27 @@ def main():
     # Using cowsay package
     if len(sys.argv) == 2:
         cowsay.trex("Hello " + sys.argv[1])
-    """
+    
 
     # APIs
     if len(sys.argv) != 2:
         sys.exit()
 
-    response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=", + sys.argv[1])
-    print(json.dumps(response.json(), indent=2))
+    response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
+    # print(json.dumps(response.json(), indent=2))
 
-    
+    o = response.json()
+    for result in o["results"]:
+        print(result["trackName"])
+    """
+
+    if len(sys.argv) == 2:
+        goodbye(sys.argv[1])
+
+    # the use of emoji package
+    print(emoji.emojize("Python is :thumbsup:", language="alias"))
+
+
 
 
 
