@@ -2,6 +2,8 @@ import random
 import statistics
 
 import cowsay
+import requests # APIs
+import json
 import sys
 
 def main():
@@ -69,11 +71,21 @@ def main():
 
     for arg in sys.argv[1:]:
         print(f"Hello, my name is {arg}.")
-    """
+    
 
     # Using cowsay package
     if len(sys.argv) == 2:
         cowsay.trex("Hello " + sys.argv[1])
+    """
+
+    # APIs
+    if len(sys.argv) != 2:
+        sys.exit()
+
+    response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=", + sys.argv[1])
+    print(json.dumps(response.json(), indent=2))
+
+    
 
 
 
