@@ -5,5 +5,5 @@ def lines(a):
     for i in range(a):
         print()
 
-def bar():
-    print("=======================")
+def bar(symbol):
+    print(symbol * 30)
