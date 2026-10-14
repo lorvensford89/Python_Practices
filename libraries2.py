@@ -6,6 +6,7 @@ Practices of libraries
 
 from el_library import lines
 from el_library import bar
+from el_library import my_name
 
 from pathlib import Path
 import json
@@ -16,6 +17,7 @@ from collections import Counter
 import logging
 
 def main():
+    my_name("Lorvensford")
     lines(2)
     bar("-")
     practices()

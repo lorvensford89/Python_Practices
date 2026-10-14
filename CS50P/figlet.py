@@ -28,13 +28,12 @@ def problem_set4():
         - Outputs that text in the desired font.
     """
 
-    # Examples from the Figlet module
     figlet = Figlet()
     figlet.getFonts()
     figlet.setFont(font='slant')
+    print(figlet.renderText("Lorvensford"))
 
-    name = "EL"
-    print(figlet.renderText(name))
+
 
     # TODO: Command-line Arguments
 
