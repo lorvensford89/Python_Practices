@@ -7,6 +7,7 @@ from el_library import lines
 from el_library import bar
 
 from pyfiglet import Figlet
+import random
 
 def main():
     lines(2)
@@ -28,14 +29,31 @@ def problem_set4():
         - Outputs that text in the desired font.
     """
 
+  
+
+    # Command-line checking
+    # Setting the package modules
     figlet = Figlet()
-    figlet.getFonts()
-    figlet.setFont(font='slant')
-    print(figlet.renderText("Lorvensford"))
+    font_list = set(figlet.getFonts())
+    random_font = random.choice(figlet.getFonts())
 
+    # Command-line checking
+    if len(sys.argv) == 1:
+        user_input = input("")
+        figlet.setFont(font=random_font)
+    elif len(sys.argv) == 3:
+        if (sys.argv[1] == "-f" or sys.argv[1] == "--font") and sys.argv[2] in font_list:
+            user_input = input("")
+            figlet.setFont(font=sys.argv[2])
+        else:
+            sys.exit("Invalid usage")
+    else:
+        sys.exit("Invalid usage")
 
+    print(figlet.renderText(user_input))
 
-    # TODO: Command-line Arguments
+    
+
 
 
 if __name__ == "__main__":
