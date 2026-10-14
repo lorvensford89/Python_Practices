@@ -3,16 +3,17 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-import el_library
+from el_library import lines
+from el_library import bar
+
 from pyfiglet import Figlet
 
 def main():
-    el_library.lines(2)
-    el_library.bar()
+    lines(2)
+    bar("=")
     problem_set4()
-    el_library.bar()
-    el_library.lines(1)
-
+    bar("=")
+    lines(1)
 
 def problem_set4():
     """
