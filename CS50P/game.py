@@ -3,8 +3,6 @@ import random
 def main():
     problem_set()
 
-
-
 def problem_set():
     """
     In a file called game.py, implement a program that:
@@ -20,8 +18,6 @@ def problem_set():
                 - If the guess is the same as that integer, the program should output Just right! 
                     and exit.
     """
-
-
 
     while True:
         try:
@@ -43,16 +39,12 @@ def problem_set():
                     print("Too small!")
                     continue
                 elif guess > guessed_number:
-                    print("Too big!")
+                    print("Too large!")
                     continue
                 else:
                     print("Just right!")
-                    break
-                
+                    break     
         break
-
-            
-            
 
 if __name__ == "__main__":
     main()
