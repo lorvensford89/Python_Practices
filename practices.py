@@ -1,20 +1,13 @@
+import inflect
+
 def main():
 
-    while True:
-        try:
-            guess = guessing_number()
-            break
-        except ValueError as e:
-            print(f"Invalid: {e}.Try again.")
+    p = inflect.engine()
 
+    count = 233
+    print(f"There {p.plural_verb("was", count), {p.number_to_words(count)}, {p.plural_noun("person", count)}} by the door.")
 
-
-def guessing_number():
-    number = int(input("Enter the guessed number: "))
-    if not 1 <= number <= 100:
-        raise ValueError("Out of range!")   # detection of crashing
-    return number
-
+    
 
 if __name__ == "__main__":
     main()

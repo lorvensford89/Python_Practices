@@ -10,7 +10,11 @@ import inflect
 
 
 def main():
-    pass
+    lines(2)
+    bar("-")
+    problem_set4()
+    lines(2)
+    bar("-")
 
 
 def problem_set4():
@@ -32,6 +36,26 @@ def problem_set4():
     """
 
     # Solution: 
+
+    p = inflect.engine()
+    count_people = 0
+    list_people = []
+    prompt = "Adieu, adieu, to"
+
+    while True:
+        try:
+            user_input = input("Name: ")
+            count_people += 1
+            list_people.append(user_input)
+        except EOFError:
+            pass
+            print(f"{prompt} {p.join(list_people)}")
+            break
+    
+            
+
+
+
 
 
 if __name__ == "__main__":

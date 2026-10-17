@@ -8,6 +8,8 @@ import sys
 from say import goodbye
 import emoji
 
+import inflect
+
 def main():
     lines(2)
 
@@ -114,6 +116,13 @@ def calc_mean(a, b):
     m = statistics.mean(numbers)
 
     return m
+
+
+def new_function_inflect():
+    p = inflect.engine()
+    
+
+
 
 if __name__ == "__main__":
     main()
