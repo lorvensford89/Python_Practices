@@ -34,8 +34,9 @@ def problem_set():
             except ValueError:
                 continue
             else:
-                print(guessed_number)
-                if guess < guessed_number:
+                if guess <= 0:
+                    continue
+                elif guess < guessed_number:
                     print("Too small!")
                     continue
                 elif guess > guessed_number:
