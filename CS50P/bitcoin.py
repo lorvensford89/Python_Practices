@@ -31,29 +31,33 @@ def problem_set():
 
     # Solutions
     
+    
+    if len(sys.argv) != 2:
+        sys.exit("Missing command-line argument")
+
+    try:
+        m_bitcoin = float(sys.argv[1])
+    except ValueError:
+        sys.exit("command-line argument is not a number")
 
     try:
         response = requests.get("https://rest.coincap.io/v3/assets/bitcoin?apiKey=7dd353ae112e671b2ae7434d98b19988ac1aacb3f27852a5a6718cce7c596416")
         response.raise_for_status()
     except requests.RequestException:
         sys.exit("Request failed!")
-    else:
-        print("Request succeeded!")     # Checking
-        if len(sys.argv) < 2:
-            sys.exit("Missing command-line argument")
-        else:
-            if not sys.argv[1].isdigit():
-                sys.exit("command-line argument is not a number")
-            else:
-                # Make the conversion:
-                m_bitcoin = float(sys.argv[1])
-                data = response.json()["data"]
-                us_dollars = float(data["priceUsd"])
-                amount = m_bitcoin * us_dollars
-                print(f"${amount:,.4f}")
-                print("USD")    # Checking: display the corresponding price in USD
-                lines(2)
-                print(response.text)    # Checking
+
+    
+    
+    print("Request succeeded!")     # Checking
+    # Make the conversion:
+    m_bitcoin = float(sys.argv[1])
+    data = response.json()["data"]
+    us_dollars = float(data["priceUsd"])
+    amount = m_bitcoin * us_dollars
+    print(f"${amount:,.4f}")
+    print("USD")    # Checking: display the corresponding price in USD
+    lines(2)
+    print(response.text)    # Checking
 
 
 if __name__ == "__main__":
