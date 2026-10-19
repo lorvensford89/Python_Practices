@@ -1,9 +1,10 @@
 import requests
 import json
+import sys
 
 
 def main():
-    pass
+    problem_set()
 
 
 def problem_set():
@@ -24,6 +25,32 @@ def problem_set():
     """
 
     # Solutions
+    
+
+    try:
+        response = requests.get("https://rest.coincap.io/v3/assets/bitcoin?apiKey=7dd353ae112e671b2ae7434d98b19988ac1aacb3f27852a5a6718cce7c596416")
+        response.raise_for_status()
+    except requests.RequestException:
+        print("Request failed!")
+    else:
+        print("Request succeeded!")     # Checking
+        if len(sys.argv) < 2:
+            print("Missing command-line argument")
+        else:
+            if not sys.argv[1].isdigit():
+                print("command-line argument is not a number")
+            else:
+                # Make the conversion:
+                m_bitcoin = sys.argv[1]
+                float(m_bitcoin)
+                response.json()
+                amount = 0
+                print(f"${amount:,.4f}")
+                print("USD")    # Checking: display the corresponding price in USD
+
+
+
+
 
 
 
