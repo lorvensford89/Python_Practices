@@ -1,5 +1,4 @@
 # Personal library
-
 from pyfiglet import Figlet     # I like that package
 
 def lines(a):

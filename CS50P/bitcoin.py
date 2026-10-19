@@ -1,6 +1,12 @@
 import requests
 import json
 import sys
+from pathlib import Path
+from el_library import lines
+from el_library import bar
+
+sys.path.append(str(Path(__file__).resolve().parent.parent))    # I need to understand this
+
 
 
 def main():
@@ -47,6 +53,8 @@ def problem_set():
                 amount = 0
                 print(f"${amount:,.4f}")
                 print("USD")    # Checking: display the corresponding price in USD
+                lines(2)
+                response.text()
 
 
 
