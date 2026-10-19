@@ -36,14 +36,14 @@ def problem_set():
         response = requests.get("https://rest.coincap.io/v3/assets/bitcoin?apiKey=7dd353ae112e671b2ae7434d98b19988ac1aacb3f27852a5a6718cce7c596416")
         response.raise_for_status()
     except requests.RequestException:
-        print("Request failed!")
+        sys.exit("Request failed!")
     else:
         print("Request succeeded!")     # Checking
         if len(sys.argv) < 2:
-            print("Missing command-line argument")
+            sys.exit("Missing command-line argument")
         else:
             if not sys.argv[1].isdigit():
-                print("command-line argument is not a number")
+                sys.exit("command-line argument is not a number")
             else:
                 # Make the conversion:
                 m_bitcoin = float(sys.argv[1])
@@ -54,10 +54,6 @@ def problem_set():
                 print("USD")    # Checking: display the corresponding price in USD
                 lines(2)
                 print(response.text)    # Checking
-
-
-
-
 
 
 if __name__ == "__main__":
