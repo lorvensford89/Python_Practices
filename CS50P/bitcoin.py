@@ -2,11 +2,10 @@ import requests
 import json
 import sys
 from pathlib import Path
-from el_library import lines
-from el_library import bar
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))    # I need to understand this
-
+from el_library import lines
+from el_library import bar
 
 
 def main():
@@ -47,17 +46,14 @@ def problem_set():
                 print("command-line argument is not a number")
             else:
                 # Make the conversion:
-                m_bitcoin = sys.argv[1]
-                float(m_bitcoin)
-                response.json()
-                amount = 0
+                m_bitcoin = float(sys.argv[1])
+                data = response.json()["data"]
+                us_dollars = float(data["priceUsd"])
+                amount = m_bitcoin * us_dollars
                 print(f"${amount:,.4f}")
                 print("USD")    # Checking: display the corresponding price in USD
                 lines(2)
-                response.text()
-
-
-
+                print(response.text)    # Checking
 
 
 
