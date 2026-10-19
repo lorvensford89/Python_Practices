@@ -42,22 +42,27 @@ def problem_set():
 
     try:
         response = requests.get("https://rest.coincap.io/v3/assets/bitcoin?apiKey=7dd353ae112e671b2ae7434d98b19988ac1aacb3f27852a5a6718cce7c596416")
-        response.raise_for_status()
+
+        response.raise_for_status()         # that method makes sure the HTTP request succeeded before
+                                            # the program tries to used its response data
+                                            # it is also a subclass of 'requests.RequestException', the 
+                                            # except block can catch it.
     except requests.RequestException:
         sys.exit("Request failed!")
 
     
     
     print("Request succeeded!")     # Checking
-    # Make the conversion:
     m_bitcoin = float(sys.argv[1])
     data = response.json()["data"]
     us_dollars = float(data["priceUsd"])
     amount = m_bitcoin * us_dollars
     print(f"${amount:,.4f}")
+
+
     print("USD")    # Checking: display the corresponding price in USD
     lines(2)
-    print(response.text)    # Checking
+    print(response.text)    # Checking: information from the API using JSON format
 
 
 if __name__ == "__main__":
