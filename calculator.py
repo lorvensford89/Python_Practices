@@ -7,7 +7,7 @@ def main():
 
 
 def square(number):
-    return pow(number, 2)
+    return (number + number)
 
 
 if __name__ == "__main__":
