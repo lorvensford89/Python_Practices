@@ -8,3 +8,6 @@ def test_name():
 
 def test_cs50():
     assert shorten("CS50") == "CS50"
+
+def test_cap():
+    assert shorten("EL") == "L"
