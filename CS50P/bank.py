@@ -7,10 +7,11 @@ def main():
     output $100. Ignore any leading whitespace in the user’s greeting, and
     treat the user’s greeting case-insensitively.
     """
-    user_input = input("Greeting: ").strip().lower()
+    user_input = input("Greeting: ")
     print(f"${value(user_input)}")
 
 def value(greeting):
+    greeting = greeting.strip().lower()
     if greeting.startswith("hello"):
         return 0
     elif greeting.startswith("h") and not greeting.startswith("hello"):
