@@ -10,7 +10,6 @@ def is_valid(s):
     return s[:2].isalpha() and 2 <= len(s) <= 6
 
 
-
 def mid(m):
     first_digit_index = -1
 
@@ -33,8 +32,5 @@ def mid(m):
         return False
 
     return True
-
-
-
 
 main()
