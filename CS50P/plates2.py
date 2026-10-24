@@ -11,10 +11,13 @@ def is_valid(s):
     if not (s[:2].isalpha() and 2 <= len(s) <= 6):
         return False
 
+    if not s.isalnum():
+        return False
+
     first_digit_index = -1
 
-    for i, char in enumerate(s):
-        if char.isdigit():
+    for i, j in enumerate(s):
+        if j.isdigit():
             first_digit_index = i
             break
 

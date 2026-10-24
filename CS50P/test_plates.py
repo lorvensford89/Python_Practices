@@ -1,4 +1,4 @@
-from plates2 import is_valid
+from plates import is_valid
 
 def test_first():
     assert is_valid("HELLO") == True
@@ -14,6 +14,13 @@ def test_fourth():
 
 def test_fifth():
     assert is_valid("CS05") == False
+    assert is_valid("CS50P") == False
 
 def test_sixth():
     assert is_valid("50") == False
+    assert is_valid("5.") == False
+
+def test_seventh():
+    assert is_valid("CS-50") == False
+    assert is_valid("CS 50") == False
+    assert is_valid("CS.50") == False
