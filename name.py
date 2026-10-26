@@ -7,4 +7,4 @@ for _ in range(3):
 
 
 for name in sorted(names):
-    print(name, end=" ")
+    print(f"hello {name}")
