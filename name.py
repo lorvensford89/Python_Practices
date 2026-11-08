@@ -1,9 +1,8 @@
 names = []
 
 for _ in range(3):
-    name = input("Enter name: ")
-    names.append(name)
+    names.append(input("Enter name: "))
 
-for name in names:
+for name in sorted(names):
     print(name) 
 
