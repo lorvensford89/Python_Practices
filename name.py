@@ -4,4 +4,4 @@ with open("name.txt", "r") as file:
     lines = file.readlines()
 
 for line in lines:
-    print(f"hello {line}")
+    print(f"hello {line.rstrip()}")
