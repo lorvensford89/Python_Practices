@@ -1,8 +1,5 @@
-names = []
+name = input("Enter your name: ")
 
-for _ in range(3):
-    names.append(input("Enter name: "))
-
-for name in sorted(names):
-    print(name) 
-
+file = open("name.txt", "w")
+file.write(name)
+file.close()
