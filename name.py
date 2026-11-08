@@ -1,5 +1,5 @@
 name = input("Enter your name: ")
 
-file = open("name.txt", "a")
-file.write(f"{name}\n")
-file.close()
+# The key-word "with" allows you to automate the closing of a file
+with open("name.txt", "a") as file:
+    file.write(f"{name}\n")
